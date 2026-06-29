@@ -1,0 +1,80 @@
+.list {
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 12px;
+  background-color: var(--color-bg);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.date {
+  color: var(--color-grey);
+  white-space: nowrap;
+}
+
+.platform {
+  font-weight: 600;
+}
+
+.source {
+  color: var(--color-light-grey);
+}
+
+.field {
+  color: var(--color-light-grey);
+}
+
+.status {
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+
+  &[data-status="added"] { background-color: rgba(76, 175, 80, 0.15); color: #4caf50; }
+  &[data-status="conflict"] { background-color: rgba(229, 115, 115, 0.15); color: #e57373; }
+  &[data-status="error"] { background-color: rgba(229, 115, 115, 0.15); color: #e57373; }
+  &[data-status="no_changes"] { background-color: rgba(158, 158, 158, 0.15); color: var(--color-grey); }
+}
+
+.summary {
+  color: var(--color-light-grey);
+}
+
+.changes {
+  display: grid;
+  gap: 4px;
+}
+
+.change {
+  color: var(--color-light-grey);
+}
+
+.resolution {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+
+  &[data-resolution="changed"] { background-color: rgba(100, 181, 246, 0.15); color: #64b5f6; }
+  &[data-resolution="skipped"] { background-color: rgba(158, 158, 158, 0.15); color: var(--color-grey); }
+}
+
+.message {
+  color: var(--color-grey);
+}

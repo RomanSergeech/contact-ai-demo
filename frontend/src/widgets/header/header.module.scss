@@ -1,0 +1,252 @@
+.header {
+  background-color: var(--color-black);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  .container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-main);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+.nav_link {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-grey);
+  transition: color 0.2s, background-color 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--color-text);
+    background-color: rgba(255,255,255,0.06);
+  }
+
+  &[data-active='true'] {
+    color: var(--color-text);
+    background-color: rgba(255,255,255,0.08);
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user_name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+.logout_btn {
+  font-size: 13px;
+  color: var(--color-grey);
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--color-red);
+  }
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+.nav_divider {
+  width: 1px;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+.notif_btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-grey);
+  transition: color 0.2s, background-color 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--color-text);
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.notif_badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.mobile_notif_btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--color-text);
+  transition: background-color 0.15s;
+  background-color: rgba(255, 255, 255, 0.07);
+  text-align: left;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+}
+
+// Mobile menu
+.burger {
+  display: none;
+  color: var(--color-text);
+  margin-left: 40px;
+
+  @media (max-width: 700px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.mobile_menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 300;
+  display: flex;
+  justify-content: flex-end;
+  transition: opacity .3s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &[data-active='true'] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    .mobile_menu_panel {
+      transform: translate(0);
+    }
+  }
+
+  &_panel {
+    background-color: var(--color-accent);
+    width: 260px;
+    height: 100%;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform .3s ease;
+    transform: translate(100%, 0);
+
+    a {
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 15px;
+      color: var(--color-text);
+      transition: background-color 0.15s;
+      background-color: rgba(255,255,255,0.07);
+
+      &[data-active='true'] {
+        pointer-events: none;
+        background-color: rgba(255,255,255,0.3);
+      }
+    }
+  }
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &_close {
+    color: var(--color-grey);
+    flex-shrink: 0;
+
+    &:hover { color: var(--color-text); }
+  }
+
+  &_user_name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &_logout {
+    margin-top: auto;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--color-grey);
+    text-align: left;
+    transition: background-color 0.15s, color 0.15s;
+
+    &:hover {
+      background-color: rgba(255,255,255,0.07);
+      color: var(--color-red);
+    }
+  }
+}

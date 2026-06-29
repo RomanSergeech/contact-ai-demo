@@ -1,0 +1,10 @@
+.field {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+
+  label {
+    font-size: 12px;
+    color: var(--color-grey);
+  }
+}

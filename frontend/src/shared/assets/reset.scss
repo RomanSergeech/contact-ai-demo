@@ -1,0 +1,30 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input, textarea {
+  outline: none;
+}
+
+input, select, textarea {
+  font-size: 16px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input, select, textarea {
+    font-size: 16px; /* Обещание Safari: без масштабирования! */
+  }
+}

@@ -1,0 +1,50 @@
+.top_right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (max-width: 700px) {
+    align-self: end;
+    flex-wrap: wrap;
+  }
+}
+
+.draft_btn {
+  gap: 6px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  flex-shrink: 0;
+
+  @media (max-width: 700px) {
+    span {
+      display: none;
+    }
+  }
+}
+
+.mic_btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  flex-shrink: 0;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.delete_btn {
+  @media (max-width: 700px) {
+    span {
+      display: none;
+    }
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}

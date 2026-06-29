@@ -1,0 +1,245 @@
+$container-max: 1200px;
+$container-pad: 1rem;
+
+.calendar {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-pad;
+}
+
+// ─── Toolbar ──────────────────────────────────────────────────────────────────
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.month_select {
+  display: flex;
+  gap: 8px;
+
+  > div {
+    min-width: 130px;
+
+    button {
+      height: 36px;
+      font-size: 13px;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav_btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+
+.today_btn {
+  height: 36px;
+  padding: 0 14px;
+}
+
+// ─── Grid ─────────────────────────────────────────────────────────────────────
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  overflow: hidden;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-grey);
+  padding-bottom: 6px;
+}
+
+.month_grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+  padding: 4px 2px;
+  margin: -4px -2px;
+}
+
+.cell {
+  min-height: 100px;
+  background-color: var(--color-accent);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  }
+
+  &[data-outside='true'] {
+    opacity: 0.4;
+  }
+
+  &[data-today='true'] {
+    border-color: var(--color-main);
+  }
+
+  &[data-expanded='true'] {
+    border-color: var(--color-main);
+    background-color: rgba(107,156,234,0.08);
+  }
+
+  @media (max-width: 700px) {
+    min-height: 70px;
+  }
+}
+
+// ─── Expanded day panel ────────────────────────────────────────────────────────
+
+.expanded_panel {
+  grid-column: 1 / -1;
+  overflow: hidden;
+}
+
+.expanded_panel_inner {
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-main);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.expanded_header {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-light-grey);
+  text-transform: capitalize;
+}
+
+.expanded_tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.expanded_task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.05);
+  text-align: left;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+}
+
+.expanded_task_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.expanded_task_time {
+  font-size: 12px;
+  color: var(--color-grey);
+  flex-shrink: 0;
+}
+
+.expanded_task_title {
+  font-size: 14px;
+  color: var(--color-text);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.expanded_task_priority {
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.expanded_empty {
+  font-size: 13px;
+  color: var(--color-grey);
+  text-align: center;
+  padding: 8px 0;
+}
+
+.cell_day {
+  font-size: 12px;
+  color: var(--color-light-grey);
+  padding: 2px 4px;
+}
+
+.cell_tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow-y: auto;
+}
+
+.task_item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background-color: rgba(255,255,255,0.05);
+  text-align: left;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+}
+
+.task_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.task_time {
+  font-size: 11px;
+  color: var(--color-grey);
+  flex-shrink: 0;
+}
+
+.task_title {
+  font-size: 11px;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,1 @@
+ALTER TABLE `contact_scraping_logs` MODIFY COLUMN `created_at` timestamp(6) NOT NULL DEFAULT (now(6));

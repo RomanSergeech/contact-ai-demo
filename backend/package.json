@@ -1,0 +1,62 @@
+{
+  "name": "contact-ai-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "start": "node dist/main.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.26",
+    "@nestjs/config": "^4.0.4",
+    "@nestjs/core": "^11.1.26",
+    "@nestjs/jwt": "^11.0.2",
+    "@nestjs/passport": "^11.0.5",
+    "@nestjs/platform-express": "^11.1.26",
+    "axios": "^1.18.0",
+    "bcrypt": "^6.0.0",
+    "cheerio": "^1.2.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.4",
+    "cookie-parser": "^1.4.7",
+    "drizzle-orm": "^0.45.2",
+    "express-rate-limit": "^8.5.2",
+    "file-type": "^21.3.4",
+    "helmet": "^8.2.0",
+    "morgan": "^1.11.0",
+    "multer": "^2.2.0",
+    "mysql2": "^3.22.5",
+    "openai": "^6.34.0",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "telegram": "^2.26.22",
+    "vk-io": "^4.10.1"
+  },
+  "overrides": {
+    "multer": "^2.2.0"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.22",
+    "@nestjs/schematics": "^11.1.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/cookie-parser": "^1.4.9",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.10",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.0.0",
+    "@types/passport-jwt": "^4.0.1",
+    "drizzle-kit": "^0.31.10",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

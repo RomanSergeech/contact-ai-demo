@@ -1,0 +1,33 @@
+.alert_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert {
+  background-color: var(--color-accent);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  display: grid;
+  gap: 16px;
+
+  p {
+    color: var(--color-text);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .btn {
+    justify-self: end;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+}

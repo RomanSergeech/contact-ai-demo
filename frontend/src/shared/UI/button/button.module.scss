@@ -1,0 +1,236 @@
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: max-content;
+  height: max-content;
+  padding: min(0.8em, 10px);
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  user-select: none;
+  transition: all .4s ease 0s;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  // secondary (по умолчанию): серая заливка → main
+  &[data-variant="secondary"] {
+    background-color: var(--color-grey);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-main);
+    }
+
+    &:disabled {
+      background-color: var(--color-dark-grey);
+      color: var(--color-grey);
+    }
+
+    // icon: прозрачный, нейтральный hover-тинт
+    &[data-icon="true"] {
+      background-color: transparent;
+      color: var(--color-grey);
+
+      &:hover {
+        color: var(--color-text);
+        background-color: rgba(255, 255, 255, 0.07);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--color-grey);
+        opacity: 0.4;
+      }
+    }
+  }
+
+  // primary: акцентное действие
+  &[data-variant="primary"] {
+    background-color: var(--color-main);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-main-hover);
+    }
+
+    &:disabled {
+      background-color: var(--color-dark-grey);
+      color: var(--color-grey);
+    }
+
+    // icon: прозрачный, hover-тинт в main
+    &[data-icon="true"] {
+      background-color: transparent;
+      color: var(--color-grey);
+
+      &:hover {
+        color: var(--color-main);
+        background-color: rgba(107, 156, 234, 0.1);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--color-grey);
+        opacity: 0.4;
+      }
+    }
+  }
+
+  // danger: деструктивное действие (заливка)
+  &[data-variant="danger"] {
+    background-color: var(--color-red);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-red-hover);
+    }
+
+    &:disabled {
+      background-color: var(--color-dark-grey);
+      color: var(--color-grey);
+    }
+
+    // icon: прозрачный, hover-тинт в red
+    &[data-icon="true"] {
+      background-color: transparent;
+      color: var(--color-grey);
+
+      &:hover {
+        color: var(--color-red);
+        background-color: rgba(206, 66, 51, 0.1);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--color-grey);
+        opacity: 0.4;
+      }
+    }
+  }
+
+  // success: подтверждающее действие (заливка)
+  &[data-variant="success"] {
+    background-color: var(--color-green);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-green-hover);
+    }
+
+    &:disabled {
+      background-color: var(--color-dark-grey);
+      color: var(--color-grey);
+    }
+
+    // icon: прозрачный, hover-тинт в green
+    &[data-icon="true"] {
+      background-color: transparent;
+      color: var(--color-grey);
+
+      &:hover {
+        color: var(--color-green);
+        background-color: rgba(2, 167, 5, 0.12);
+      }
+
+      &:disabled {
+        background-color: transparent;
+        color: var(--color-grey);
+        opacity: 0.4;
+      }
+    }
+  }
+
+  // ghost: прозрачный с рамкой, нейтральный hover (отмена)
+  &[data-variant="ghost"] {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--color-grey);
+
+    &:hover {
+      color: var(--color-text);
+      border-color: var(--color-grey);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  // outline: вторичное действие, рамка подсвечивается в main
+  &[data-variant="outline"] {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--color-light-grey);
+
+    &:hover {
+      color: var(--color-text);
+      border-color: var(--color-main);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  // danger-outline: деструктивное действие без заливки
+  &[data-variant="danger-outline"] {
+    background-color: transparent;
+    border: 1px solid var(--color-red);
+    color: var(--color-red);
+
+    &:hover {
+      background-color: rgba(206, 66, 51, 0.12);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  // surface: иконка с залитой поверхностью и рамкой (mic и т.п.)
+  &[data-variant="surface"] {
+    background-color: var(--color-accent);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-grey);
+
+    &:hover {
+      color: var(--color-text);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  // text: кнопка-ссылка без фона
+  &[data-variant="text"] {
+    padding: 0;
+    background-color: transparent;
+    color: var(--color-main);
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  // квадратная иконочная кнопка: габариты задаются через className
+  &[data-icon="true"] {
+    gap: 0;
+    padding: 0;
+    aspect-ratio: 1;
+  }
+}

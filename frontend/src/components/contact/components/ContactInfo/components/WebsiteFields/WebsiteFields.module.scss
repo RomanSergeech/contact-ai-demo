@@ -1,0 +1,40 @@
+.field {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+
+  label {
+    font-size: 12px;
+    color: var(--color-grey);
+  }
+}
+
+.field_group {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 16px 12px 12px;
+  margin-top: 8px;
+}
+
+.field_group_label {
+  position: absolute;
+  top: -9px;
+  left: 12px;
+  padding: 0 6px;
+  background-color: var(--color-accent);
+  font-size: 12px;
+  color: var(--color-grey);
+}
+
+.input_with_action {
+  display: flex;
+  gap: 8px;
+
+  & > input {
+    flex-grow: 1;
+  }
+}

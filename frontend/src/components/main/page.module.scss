@@ -1,0 +1,85 @@
+.page {
+  padding: 32px 0 60px;
+
+  @media (max-width: 700px) {
+    padding: 20px 0 60px;
+  }
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+
+  @media (max-width: 700px) {
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+}
+
+.delete_btn {
+  background-color: var(--color-red) !important;
+
+  @media (max-width: 700px) {
+    span {
+      display: none;
+    }
+  }
+
+  &:hover {
+    background-color: #b03525 !important;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// ─── Table ────────────────────────────────────────────────────────────────────
+
+.table_wrap {
+  overflow-x: auto;
+  padding-bottom: 10px;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 4px;
+    &:hover { background-color: rgba(255,255,255,0.25); }
+  }
+}
+
+.contacts_table {
+  min-width: 1000px;
+}
+
+// 9 columns: checkbox | # | ФИО | Должность | Приоритет | Отношения | Ближ. событие | Посл. контакт | кнопка
+.contacts_table ul {
+  grid-template-columns: 44px 44px 1fr 1fr 110px 110px 140px 150px 44px;
+
+  li:last-child {
+    padding: 13px 0;
+    justify-content: center;
+  }
+}
+
+// data rows (all ul except the header which is :first-child)
+.contacts_table ul:not(:first-child) {
+  cursor: pointer;
+  &:hover li { background-color: rgba(255,255,255,0.04); }
+}
+
+.contacts_table ul[data-selected='true'] li {
+  background-color: rgba(107,156,234,0.1) !important;
+}

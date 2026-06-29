@@ -1,0 +1,47 @@
+.page {
+  padding: 32px 0 80px;
+}
+
+.users_table {
+  & > ul {
+    grid-template-columns: 1fr 1fr 30% 150px;
+  }
+
+  .btns {
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.header_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.role_badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+
+  &[data-role='admin'] {
+    background-color: rgba(106, 153, 220, 0.18);
+    color: var(--color-main);
+  }
+  &[data-role='user'] {
+    background-color: rgba(255,255,255,0.07);
+    color: var(--color-grey);
+  }
+}
+
+.delete_btn {
+  font-size: 13px;
+  padding: 6px 14px;
+}
+

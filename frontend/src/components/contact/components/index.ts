@@ -1,0 +1,8 @@
+export { Sidebar } from './Sidebar/Sidebar'
+export { MainInfo } from './MainInfo/MainInfo'
+export { ContactInfo } from './ContactInfo/ContactInfo'
+export { Profile } from './Profile/Profile'
+export { ImportantDates } from './ImportantDates/ImportantDates'
+export { CompanyInfo } from './CompanyInfo/CompanyInfo'
+export { ActionBar } from './ActionBar/ActionBar'
+export { LogsSection } from './LogsSection/LogsSection'

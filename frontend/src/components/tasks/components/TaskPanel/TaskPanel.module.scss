@@ -1,0 +1,128 @@
+.panel_title_input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 6px 0;
+  font-family: inherit;
+  resize: none;
+  overflow: hidden;
+  transition: border-color 0.2s;
+
+  &:focus { outline: none; border-color: var(--color-main); }
+  &::placeholder { color: var(--color-grey); }
+}
+
+.task_body {
+  flex: 1;
+  padding: 20px 14px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 3px;
+
+    &:hover {
+      background-color: rgba(255,255,255,0.25);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 4px 16px 10px;
+  }
+}
+
+.deadline_wrap {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.deadline_clear {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+.description_field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 12px;
+    color: var(--color-grey);
+  }
+}
+
+.description_textarea {
+  resize: none !important;
+  min-height: 80px;
+}
+
+.panel_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    padding: 14px 10px;
+  }
+
+  button {
+    height: 40px;
+  }
+}
+
+.footer_left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.save_btn {
+  min-width: 110px;
+}
+
+// ─── Спиннер внутри кнопки Сохранить ──────────────────────────────────────────
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.save_spinner {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: btn-spin 0.7s linear infinite;
+  margin: 0 auto;
+}

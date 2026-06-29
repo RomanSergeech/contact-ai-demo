@@ -1,0 +1,36 @@
+.section {
+  grid-column: 2 / 3;
+  background-color: var(--color-accent);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  margin-top: 24px;
+
+  @media (max-width: 768px) {
+    padding: 16px 10px;
+  }
+}
+
+.section_title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.links {
+  display: grid;
+  gap: 12px;
+}
+
+.link {
+  width: fit-content;
+  font-size: 14px;
+  color: var(--color-main);
+  transition: color 0.15s;
+
+  &:hover {
+    color: var(--color-main-hover);
+  }
+}

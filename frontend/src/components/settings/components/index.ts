@@ -1,0 +1,6 @@
+export { ProfileSection } from './ProfileSection/ProfileSection'
+export { LegalSection } from './LegalSection/LegalSection'
+export { AiPromptSection } from './AiPromptSection/AiPromptSection'
+export { IntegrationsSection } from './IntegrationsSection/IntegrationsSection'
+export { ExportSection } from './ExportSection/ExportSection'
+export { DangerZoneSection } from './DangerZoneSection/DangerZoneSection'

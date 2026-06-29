@@ -1,0 +1,83 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1781129427769,
+      "tag": "0000_add_audit_log_created_at",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1781149367920,
+      "tag": "0001_groovy_red_skull",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1781162176109,
+      "tag": "0002_noisy_vargas",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1781200000000,
+      "tag": "0003_vk_oauth_tokens",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1781200000001,
+      "tag": "0004_sour_silver_fox",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1781200000002,
+      "tag": "0005_round_white_tiger",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1781190647689,
+      "tag": "0006_wakeful_cloak",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1750156800000,
+      "tag": "0007_tg_columns",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1750243200000,
+      "tag": "0008_analysis_columns",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1781897579319,
+      "tag": "0009_add_website_platform",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1781983979319,
+      "tag": "0010_social_request_throttle",
+      "breakpoints": true
+    }
+  ]
+}

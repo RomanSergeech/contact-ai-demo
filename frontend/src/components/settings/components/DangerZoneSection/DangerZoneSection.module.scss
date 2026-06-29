@@ -1,0 +1,39 @@
+.danger_zone {
+  max-width: 700px;
+  background-color: var(--color-accent);
+  border: 1px solid rgba(220, 60, 60, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+
+  @media (max-width: 700px) {
+    padding: 16px 10px;
+  }
+}
+
+.section_title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.field_label {
+  font-size: 13px;
+  color: var(--color-grey);
+  line-height: 1.5;
+}
+
+.confirm_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.confirm_text {
+  font-size: 13px;
+  color: var(--color-grey);
+  flex: 1;
+  min-width: 180px;
+}

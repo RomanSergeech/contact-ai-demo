@@ -1,0 +1,21 @@
+.save_bar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: calc(1200px - 2rem);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
+  pointer-events: none;
+
+  @media (max-width: 1200px) {
+    bottom: calc(48px + 16px);
+  }
+}
+
+.save_btn {
+  pointer-events: all;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}

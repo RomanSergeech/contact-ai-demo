@@ -1,0 +1,365 @@
+.modal {
+  background-color: var(--color-accent);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+// ─── Header ───────────────────────────────────────────────────────────────────
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+  gap: 12px;
+
+  button[aria-label="Закрыть"] {
+    color: var(--color-grey);
+    transition: color 0.2s;
+    &:hover { color: var(--color-text); }
+  }
+}
+
+.header_title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rec_indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-red);
+}
+
+.rec_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-red);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.stop_btn {
+  background-color: var(--color-red) !important;
+  font-size: 13px !important;
+  padding: 0 14px !important;
+  height: 32px !important;
+  &:hover { background-color: #b03525 !important; }
+}
+
+.mic_btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// ─── Recording body ───────────────────────────────────────────────────────────
+
+.body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.transcript {
+  flex: 1;
+  min-height: 200px;
+  width: 100%;
+  padding: 14px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-red);
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: 15px;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: none;
+  animation: border-pulse 2s ease-in-out infinite;
+
+  &::placeholder { color: var(--color-grey); }
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--color-grey);
+  text-align: center;
+}
+
+// ─── Parsing body ─────────────────────────────────────────────────────────────
+
+.parsing_body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 48px 20px;
+}
+
+.parsing_text {
+  font-size: 14px;
+  color: var(--color-grey);
+}
+
+.spinner {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-top-color: var(--color-main);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+// ─── Review body ──────────────────────────────────────────────────────────────
+
+.review_body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.12) transparent;
+
+  @media (max-width: 768px) {
+    padding: 16px 10px;
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  label {
+    font-size: 11px;
+    color: var(--color-grey);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+}
+
+.required {
+  color: var(--color-red);
+}
+
+// ─── Transcript popup (additional recording) ──────────────────────────────────
+
+.transcript_popup {
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-red);
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  animation: border-pulse 2s ease-in-out infinite;
+}
+
+.transcript_popup_header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-red);
+}
+
+.transcript_popup_text {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.5;
+  min-height: 20px;
+}
+
+.transcript_popup_text_empty {
+  color: var(--color-grey);
+}
+
+// ─── Contact info section ─────────────────────────────────────────────────────
+
+.contact_info_section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section_label {
+  font-size: 11px;
+  color: var(--color-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+// ─── Important dates ──────────────────────────────────────────────────────────
+
+.dates_section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dates_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dates_label {
+  font-size: 11px;
+  color: var(--color-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dates_empty {
+  font-size: 12px;
+  color: var(--color-dark-grey);
+}
+
+.add_date_btn {
+  font-size: 12px;
+}
+
+.date_row {
+  display: grid;
+  grid-template-columns: 1fr 140px 28px;
+  gap: 8px;
+  align-items: center;
+}
+
+.remove_date_btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    padding: 14px 10px;
+  }
+}
+
+.footer_left {
+  display: flex;
+  align-items: center;
+}
+
+.footer_right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.recording_strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recording_strip_text {
+  font-size: 13px;
+  color: var(--color-red);
+  font-weight: 500;
+}
+
+.stop_strip_btn {
+  height: 40px;
+  font-size: 12px;
+  color: var(--color-text);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: color 0.2s, border-color 0.2s;
+  background-color: #b03525;
+
+  &:hover {
+    border-color: rgba(255,255,255,0.3);
+  }
+}
+
+.spinner_sm {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.1);
+  border-top-color: var(--color-main);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.cancel_btn {
+  background-color: transparent !important;
+  color: var(--color-grey) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+
+  &:hover { border-color: var(--color-grey) !important; }
+}
+
+// ─── Animations ───────────────────────────────────────────────────────────────
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.4; transform: scale(0.85); }
+}
+
+@keyframes border-pulse {
+  0%, 100% { border-color: var(--color-red);                    }
+  50%       { border-color: rgba(206, 66, 51, 0.35);            }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

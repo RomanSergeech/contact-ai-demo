@@ -6,6 +6,46 @@ AI-CRM для управления деловыми контактами. Про
 
 ---
 
+## Интерфейс
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <b>Голосовое создание контакта</b><br/>
+      <sub>описание голосом в свободной форме, AI распознаёт речь и сам структурирует карточку</sub><br/>
+      <img src="./docs/screenshots/create_contact.png" alt="Голосовое создание контакта" width="100%" />
+    </td>
+    <td width="50%" valign="top">
+      <b>Карточка контакта</b><br/>
+      <sub>структурированные поля: цели, боли, интересы, важные даты, данные о компании</sub><br/>
+      <img src="./docs/screenshots/contact.png" alt="Карточка контакта" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <b>AI-чат на карточке контакта</b><br/>
+      <sub>ассистент берёт данные карточки как контекст и выдаёт конкретный план действий</sub><br/>
+      <img src="./docs/screenshots/contact_ai_chat.png" alt="AI-чат на карточке контакта" width="100%" />
+    </td>
+    <td width="50%" valign="top">
+      <b>Доска задач с drag-and-drop</b><br/>
+      <img src="./docs/screenshots/tasks_kanban.png" alt="Доска задач" width="100%" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <b>Календарь задач</b><br/>
+      <img src="./docs/screenshots/tasks_calendar.png" alt="Календарь задач" width="100%" />
+    </td>
+    <td width="50%" valign="top">
+      <b>Умная настройка AI-системы (кастомный системный промпт) и интеграции VK / Telegram</b><br/>
+      <img src="./docs/screenshots/settings.png" alt="Настройки" width="100%" />
+    </td>
+  </tr>
+</table>
+
+---
+
 ## Стек
 
 | | Технологии |
